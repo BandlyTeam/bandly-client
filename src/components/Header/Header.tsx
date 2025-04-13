@@ -41,6 +41,8 @@ export function Header(props: HeaderProps) {
         />
         <h1 className={s.title}>BANDY</h1>
       </div>
+
+      <div className={s.shadow} />
     </header>
   );
 }
