@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import s from './Header.module.scss';
 
-import pauseImg from './photos/pause.png';
-import userImg from './photos/user.svg';
-import logoImg from './photos/logo.png';
-import heroImg from './photos/1.png';
+import pauseImg from '../../../public/assets/icons/pause.png';
+import userImg from '../../../public/assets/icons/user.svg';
+import logoImg from '../../../public/assets/icons/logo.png';
+import heroImg from '../../../public/assets/images/hero.png';
 
 type HeaderProps = {};
 
