@@ -1,0 +1,35 @@
+{
+ "author": "DENFSA",
+ "email": "denfsa@gmail.com",
+ "description": "DENFSA is gay musician from Lviv, Ukraine he is famous for Where is my mind cover.",
+ "placeInRanking": 1,
+ "songs": [
+  {
+    "name": "Where is my mind",
+    "duration": "3:45",
+    "album": "Album 1",
+    "year": 2025,
+    "cover": "cover1.jpg",
+    "rankAmongAuthor": 1,
+    "rankAmongAll": 1
+  },
+  {
+    "name": "Житомир",
+    "duration": "4:20",
+    "album": "Album 1",
+    "year": 2024,
+    "cover": "cover2.jpg",
+    "rankAmongAuthor": 2,
+    "rankAmongAll": 2
+  },
+  {
+    "name": "Дешеві драми",
+    "duration": "3:45",
+    "album": "Album 1",
+    "year": 2023,
+    "cover": "cover3.jpg",
+    "rankAmongAuthor": 3,
+    "rankAmongAll": 3
+  } 
+ ]
+}

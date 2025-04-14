@@ -1,14 +1,16 @@
 import Image from 'next/image';
 import s from './Header.module.scss';
+import { ReactNode } from 'react';
 
 import pauseImg from '../../../public/assets/icons/pause.png';
 import userImg from '../../../public/assets/icons/user.svg';
 import logoImg from '../../../public/assets/icons/logo.png';
-import heroImg from '../../../public/assets/images/hero.png';
 
-type HeaderProps = {};
+interface HeaderProps {
+  hero?: ReactNode;
+}
 
-export function Header(props: HeaderProps) {
+export function Header({ hero }: HeaderProps) {
   return (
     <header className={s.header}>
       <nav className={s.nav}>
@@ -30,17 +32,7 @@ export function Header(props: HeaderProps) {
           <Image src={userImg} alt="User" width={30} height={30} />
         </a>
       </nav>
-
-      <div className={s.hero}>
-        <Image
-          src={heroImg}
-          alt="Main Art"
-          width={800}
-          height={600}
-          className={s.heroImage}
-        />
-        <h1 className={s.title}>BANDY</h1>
-      </div>
+      {hero}
 
       <div className={s.shadow} />
     </header>
