@@ -35,6 +35,7 @@
       rgba(0, 0, 0, 0.1) 50%,
       rgba(0, 0, 0, 0.3) 100%);
   animation: shimmer 2s infinite;
+
 }
 
 @keyframes shimmer {
@@ -57,12 +58,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: var(--font-luckiest-guy);
-  font-size: 200px;
+  font-size: 350px;
   font-weight: 200;
   color: transparent;
-  -webkit-text-stroke: 1px rgb(42, 42, 42);
+  -webkit-text-stroke: 1px rgb(20, 20, 20);
   letter-spacing: 10px;
   z-index: 1;
+  filter: drop-shadow(10px 0px 4px rgba(90, 90, 90, 100));
 
 
   &Image {
@@ -75,4 +77,10 @@
     opacity: 0.9;
   }
 
+  
+}
+
+.title:hover {
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1), -10px -10px 10px white;
+  cursor: pointer;
 }
