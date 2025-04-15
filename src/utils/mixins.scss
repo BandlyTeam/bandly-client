@@ -1,0 +1,38 @@
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'mobile' {
+    @media (max-width: 480px) { @content; }
+  }
+  @if $breakpoint == 'tablet' {
+    @media (max-width: 768px) { @content; }
+  }
+  @if $breakpoint == 'desktop' {
+    @media (max-width: 1024px) { @content; }
+  }
+  @if $breakpoint == 'large' {
+    @media (max-width: 1440px) { @content; }
+  }
+}
+
+// Container mixin
+@mixin container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  @include respond-to('desktop') {
+    padding: 0 15px;
+  }
+  @include respond-to('tablet') {
+    padding: 0 10px;
+  }
+}
+
+// Spacing mixin
+@mixin spacing($property, $values...) {
+  @each $value in $values {
+    #{$property}: $value;
+  }
+} 

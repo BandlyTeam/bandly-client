@@ -12,14 +12,21 @@ export default function Home() {
     <div className={s.page}>
       <Header hero={<Hero />} />
       <div className={s.shadow} />
-      <div className={s.main}>
+      <main className={s.main}>
         <div className={s.mainTopAuthor}>
           <div className={s.mainTopAuthorHead}>
-            <p className={s.mainTopAuthorHeadText}>top author<br/> of the month</p>
+            <p className={s.mainTopAuthorHeadText}>
+              top author<br />of the month
+            </p>
             <p className={s.mainTopAuthorHeadName}>DENFSA</p>
           </div>
           <div className={s.mainTopAuthorCover}>
-            <Image className={s.mainTopAuthorCoverImage} src={cdBox} alt="denfsa" width={400} height={200} />
+            <Image 
+              className={s.mainTopAuthorCoverImage} 
+              src={cdBox} 
+              alt="denfsa" 
+              priority
+            />
           </div>
         </div>
         <div className={s.mainTopSongs}>
@@ -27,9 +34,9 @@ export default function Home() {
             <h2 className={s.topSongsBackground}>TOP</h2>
             <p className={s.topSongsTitle}>SONGS</p>
           </div>
-          <SongsList heartIcon={heartIcon} />
+          <SongsList heartIcon={heartIcon} styles={s} />
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   );
