@@ -1,0 +1,65 @@
+@import '@/utils/mixins.scss';
+
+.songs {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1;
+
+  &List {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+    position: relative;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+  }
+
+  &Item {
+    height: 100px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 30px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &Name {
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    &Heart {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      
+      img {
+        filter: brightness(0) invert(1);
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

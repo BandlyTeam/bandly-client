@@ -1,86 +1,98 @@
-.footer {
-    background-color: #fff;
-    padding: 40px 20px;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: slideIn 1.2s ease-out;
-  
-    @keyframes slideIn {
-      from {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-  }
-  
-  .footerContent {
+@import '@/utils/mixins.scss';
 
+.footer {
+  width: 100%;
+  background-color: #fff;
+  padding: 40px 0;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+
+  &Content {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    flex-wrap: wrap;
-    margin-left: 20px;
+    align-items: flex-start;
+    @include container;
   }
-  
-  .subscribeSection {
+
+  &Subscribe {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-left: -70px; 
-  }
-  
-  .title {
-    font-weight: 200;
-    font-size: 16px;
-    letter-spacing: 0px;
-    margin: auto;
-  }
-  
-  .inputWrapper {
-    display: flex;
-    border: 1px solid #262626; 
-    border-radius: 10px;
-    overflow: hidden;
-    max-width: 400px;
-    margin-top: 1px;
-  }
-  
-  .inputWrapper input {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    outline: none;
-  }
-  
-  .inputWrapper button {
-    width: 40px;  
-    height: 40px; 
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
 
+    &Title {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    &Input {
+      display: flex;
+      border: 1px solid #262626;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 300px;
+
+      input {
+        flex: 1;
+        padding: 12px 16px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        text-transform: uppercase;
+        
+        &::placeholder {
+          color: #000;
+          opacity: 1;
+        }
+      }
+
+      button {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover {
+          background-color: #f5f5f5;
+        }
+      }
+    }
   }
-  
-  .socials {
+
+  &Socials {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     font-size: 20px;
     color: #000;
-    margin-top: 20px;
+
+    svg {
+      cursor: pointer;
+      
+      &:hover {
+        opacity: 0.7;
+      }
+    }
   }
-  
-  .footerText {
-    font-weight: 200;
+
+  &Copyright {
+    font-weight: 300;
     margin-top: 40px;
-    font-size: 15px;
-    color: #555;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
   }
+}

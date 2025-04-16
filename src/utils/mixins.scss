@@ -29,10 +29,3 @@
     padding: 0 10px;
   }
 }
-
-// Spacing mixin
-@mixin spacing($property, $values...) {
-  @each $value in $values {
-    #{$property}: $value;
-  }
-} 
