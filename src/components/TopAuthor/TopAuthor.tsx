@@ -10,13 +10,13 @@ export default function TopAuthor() {
           <p className={s.topAuthorHeadText}>
             TOP AUTHOR<br />OF MONTH
           </p>
-          <h1 className={s.topAuthorHeadName}>DEFSA</h1>
+          <h1 className={s.topAuthorHeadName}>DENFSA</h1>
         </div>
         <div className={s.topAuthorCover}>
           <Image
             className={s.topAuthorCoverImage}
             src={cdBox}
-            alt="CD cover for DEFSA"
+            alt="CD cover for DENFSA"
             priority
             width={230}
             height={230}
