@@ -1,0 +1,34 @@
+.page{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(0, 0, 0, 0) 90%); /* Змінено прозорість та кінцевий колір */
+    pointer-events: none;
+    z-index: 2;
+}
+
+.main {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    justify-content: space-between;
+  
+  
+}
+  

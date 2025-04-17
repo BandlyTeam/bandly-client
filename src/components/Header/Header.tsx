@@ -20,7 +20,7 @@ export function Header({ hero }: HeaderProps) {
 
         <div className={s.navLinks}>
           <a href="#">Groups</a>
-          <a href="#">Music</a>
+          <a href="@/(music)/music/page.tsx">Music</a>
           <a href="#" className={s.logo}>
             <Image src={logoImg} alt="Logo" width={40} height={40} />
           </a>
