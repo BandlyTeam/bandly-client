@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/assets/icons/logo.png",
   }
-  }
+};
 
 export default function RootLayout({
   children,

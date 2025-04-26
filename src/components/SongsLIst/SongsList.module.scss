@@ -32,6 +32,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(50, 50, 50, 0.7);
+      transform: translateY(-2px);
+    }
 
     &Name {
       color: white;
@@ -49,16 +55,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px;
+      transition: transform 0.2s ease;
       
-      img {
-        filter: brightness(0) invert(1);
-        width: 24px;
-        height: 24px;
-      }
-
       &:hover {
-        opacity: 0.8;
+        transform: scale(1.1);
       }
     }
   }

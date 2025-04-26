@@ -1,19 +1,39 @@
 .header {
   height: auto;
   position: relative;
-  overflow: hidden;
+  background-color: transparent;
 }
 
 .nav {
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px;
-  z-index: 20;
+
+  &Logo {
+    height: 45px;
+    width: 100%;
+    object-fit: cover;
+
+    &User {
+      height: 50px;
+      width: 100%;
+    }
+  }
+
+  &Links {
+    height: 100%;
+    z-index: 30;
+  }
 }
 
 .icon {
   width: 30px;
+
+  &User {
+    width: 45px;
+  }
 
   img {
     width: 100%;
@@ -66,4 +86,9 @@
       rgba(0, 0, 0, 0) 100%
     );
   z-index: 10;
+}
+
+.heroWrapper {
+  position: absolute;
+  inset: 0;
 }

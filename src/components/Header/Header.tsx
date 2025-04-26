@@ -1,38 +1,74 @@
 import Image from 'next/image';
 import s from './Header.module.scss';
 import { ReactNode } from 'react';
-
-import pauseImg from '../../../public/assets/icons/pause.png';
-import userImg from '../../../public/assets/icons/user.svg';
-import logoImg from '../../../public/assets/icons/logo.png';
+import Link from 'next/link';
+import burgerBlack from '../../../public/assets/icons/burgerBlack.svg';
+import userBlack from '../../../public/assets/icons/userBlack.svg';
+import bLogoBlack from '../../../public/assets/icons/bLogoBlack.svg';
+import burgerWhite from '../../../public/assets/icons/burgerWhite.svg';
+import userWhite from '../../../public/assets/icons/userWhite.svg';
+import bLogoWhite from '../../../public/assets/icons/bLogoWhite.svg';
 
 interface HeaderProps {
   hero?: ReactNode;
+  headerHeight?: number;
+  white?: boolean; 
 }
 
-export function Header({ hero }: HeaderProps) {
+enum Icons {
+  Burger,
+  BLogo,
+  User
+}
+
+export function Header({ hero, headerHeight = 700, white = false}: HeaderProps) {
+
+  const handleIconsColor = (iconType: Icons) => {
+    switch(iconType) {
+      case Icons.Burger:
+        return white ? burgerWhite : burgerBlack;
+      case Icons.BLogo:
+        return white ? bLogoWhite : bLogoBlack;
+      case Icons.User:
+        return white ? userWhite : userBlack;
+      default:
+        return white ? bLogoWhite : bLogoBlack;
+    }
+  }
+
+
   return (
-    <header className={s.header}>
+    <header
+      className={s.header}
+      style={
+        {
+          height: headerHeight,
+        }
+      }
+    >
       <nav className={s.nav}>
-        <a href="#" className={`${s.icon} ${s.left}`}>
-          <Image src={pauseImg} alt="Pause" width={30} height={30} />
-        </a>
+        <Link href="#" className={`${s.icon} ${s.iconBurger} ${s.left}`}>
+          <Image src={handleIconsColor(Icons.Burger)} alt="Pause" width={30} height={30} />
+        </Link>
 
         <div className={s.navLinks}>
-          <a href="#">Groups</a>
-          <a href="@/(music)/music/page.tsx">Music</a>
-          <a href="#" className={s.logo}>
-            <Image src={logoImg} alt="Logo" width={40} height={40} />
-          </a>
-          <a href="#">Events</a>
-          <a href="#">Social Media</a>
+          <Link style={{ color: white ? 'white' : 'black' }} href="">Groups</Link>
+          <Link href="/music" style={{ color: white ? 'white' : 'black' }}>Music</Link>
+          <Link href="/" className={s.navLinksLink}>
+            <Image className={s.navLogo} src={handleIconsColor(Icons.BLogo)} alt="Logo" width={100} height={100} />
+          </Link>
+          <Link href="#" style={{ color: white ? 'white' : 'black' }}>Events</Link>
+          <Link href="#" style={{ color: white ? 'white' : 'black' }}>Media</Link>
         </div>
 
-        <a href="#" className={`${s.icon} ${s.right}`}>
-          <Image src={userImg} alt="User" width={30} height={30} />
-        </a>
+        <Link href="#" className={`${s.icon} ${s.iconUser} ${s.right}`}>
+          <Image className={`${s.navLogoUser} ${s.navLogo}`} src={handleIconsColor(Icons.User)} alt="User" width={50} height={50} />
+        </Link>
       </nav>
-      {hero}
+
+      <div className={s.heroWrapper}>
+        {hero}
+      </div>
 
       <div className={s.shadow} />
     </header>
