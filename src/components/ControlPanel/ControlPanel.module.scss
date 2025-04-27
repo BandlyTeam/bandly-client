@@ -1,0 +1,18 @@
+.control {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &Player {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &Icon {
+        &Next {
+            transform: rotate(180deg);
+        }
+    } 
+}

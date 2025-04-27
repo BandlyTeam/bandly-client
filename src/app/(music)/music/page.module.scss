@@ -10,6 +10,16 @@
       #000 20%
     );
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+}
+
+.musicCardWrapper {
+  width: 400px;
+  height: 400px;
+  background: #ffffff;
+  border-radius: 30px;
 }
   

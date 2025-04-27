@@ -21,7 +21,7 @@ enum Icons {
   User
 }
 
-export function Header({ hero, headerHeight = 700, white = false}: HeaderProps) {
+export default function Header({ hero, headerHeight = 700, white = false}: HeaderProps) {
 
   const handleIconsColor = (iconType: Icons) => {
     switch(iconType) {
