@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero/Hero";
 import s from "./page.module.scss";
-import { Header } from "@/components/Header/Header";
+import Header from "@/components/Header/Header";
 import heartIcon from "../../public/assets/icons/heart.svg";
 import SongsList from "@/components/SongsList/SongsList";
 import TopAuthor from "@/components/TopAuthor/TopAuthor";

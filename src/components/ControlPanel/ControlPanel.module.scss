@@ -3,16 +3,120 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
 
-    &Player {
-        display: flex;
-        align-items: center;
-        gap: 8px;
+.controlPlayer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.controlBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 4px;
+    border-radius: 50%;
+    transition: box-shadow 0.4s, transform 0.4s, background 0.4s, scale 0.3s;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    // overflow: hidden;
+
+    &:hover,
+    &:focus-visible {
+        background: rgba(127, 95, 255, 0.08);
+        transform: scale(1.04);
     }
+    &:active {
+        background: rgba(127,95,255,0.16);
+        transform: scale(0.97);
+    }
+}
 
-    &Icon {
-        &Next {
-            transform: rotate(180deg);
-        }
-    } 
+.controlBtn::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(127,95,255,0.18);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+    transition: opacity 0.18s, transform 0.18s;
+    z-index: 1;
+}
+
+.controlBtn:active::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 0.18s, transform 0.18s;
+}
+
+.controlBtnPrev:active {
+    background: rgba(127, 95, 255, 0.16);
+}
+
+.controlBtnPrev:hover .controlIcon,
+.controlBtnPrev:focus-visible .controlIcon {
+    filter: drop-shadow(0 2px 12px #7f5fffcc) brightness(1.15) saturate(1.2);
+    transform: rotate(180deg) scale(1.12);
+}
+
+.controlBtnNext:hover .controlIcon,
+.controlBtnNext:focus-visible .controlIcon,
+.controlBtnPlay:hover .controlIcon,
+.controlBtnPlay:focus-visible .controlIcon {
+    filter: drop-shadow(0 2px 12px #7f5fffcc) brightness(1.15) saturate(1.2);
+    transform: scale(1.12);
+}
+
+.controlBtnPlus:hover .controlIcon,
+.controlBtnPlus:focus-visible .controlIcon {
+    filter: drop-shadow(0 2px 12px #7f5fffcc) brightness(1.15) saturate(1.2);
+    transform: scale(1.12) rotate(-180deg);
+}
+
+.controlIcon {
+    cursor: pointer;
+    transition: box-shadow 0.4s, transform 0.4s, background 0.4s, scale 0.3s;
+}
+
+.controlIconPrev {
+    transform: rotate(180deg);
+}
+
+.controlBtn[aria-label="Play"]:hover,
+.controlBtn[aria-label="Play"]:focus-visible {
+    background: rgba(0, 200, 120, 0.10);
+}
+
+.controlBtn[aria-label="Add to playlist"]:hover,
+.controlBtn[aria-label="Add to playlist"]:focus-visible {
+    background: rgba(255, 180, 0, 0.10);
+}
+
+.impact {
+    animation: impact-bounce 0.18s cubic-bezier(.4,1.6,.6,1);
+}
+
+@keyframes impact-bounce {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(127,95,255,0.18);
+    }
+    60% {
+        transform: scale(0.92);
+        box-shadow: 0 0 0 6px rgba(127,95,255,0.12);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(127,95,255,0);
+    }
 }

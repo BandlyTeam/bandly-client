@@ -1,3 +1,4 @@
+"use client"
 import s from "./ControlPanel.module.scss";
 import Image from "next/image";
 import bLike from '@/../public/assets/icons/bLike.svg'
@@ -8,6 +9,7 @@ import wLike from '@/../public/assets/icons/wLike.svg'
 import wPlay from '@/../public/assets/icons/wPlay.svg'
 import wNext from '@/../public/assets/icons/wNext.svg'
 import wPlus from '@/../public/assets/icons/wPlus.svg'
+import React from "react";
 
 interface ControlPanelProps {
     theme?: 'light' | 'dark';
@@ -24,17 +26,27 @@ export default function ControlPanel({ theme = 'light' }: ControlPanelProps) {
     return (
         <div className={s.control}>
             <div>
-                <Image className={s.controlIcon} src={icons.like} alt="Like" width={34} height={34} />
+                <button className={s.controlBtn} aria-label="Like">
+                  <Image className={s.controlIcon} src={icons.like} alt="Like" width={34} height={34} />
+                </button>
             </div>
 
             <div className={s.controlPlayer}>
-                <Image className={`${s.controlIcon} ${s.controlIconNext}`} src={icons.next} alt="Next" width={28} height={28} />
-                <Image className={s.controlIcon} src={icons.play} alt="Play" width={48} height={48} />
-                <Image className={s.controlIcon} src={icons.next} alt="Next" width={28} height={28} />
+                <button className={`${s.controlBtn} ${s.controlBtnPrev}`} aria-label="Previous">
+                  <Image className={`${s.controlIcon} ${s.controlIconPrev}`} src={icons.next} alt="Previous" width={28} height={28} />
+                </button>
+                <button className={`${s.controlBtn} ${s.controlBtnPlay}`} aria-label="Play">
+                  <Image className={s.controlIcon} src={icons.play} alt="Play" width={48} height={48} />
+                </button>
+                <button className={`${s.controlBtn} ${s.controlBtnNext}`} aria-label="Next">
+                  <Image className={s.controlIcon} src={icons.next} alt="Next" width={28} height={28} />
+                </button>
             </div>
 
             <div>
-                <Image className={s.controlIcon} src={icons.plus} alt="Add to playlist" width={34} height={34} />
+                <button className={`${s.controlBtn} ${s.controlBtnPlus}`} aria-label="Add to playlist">
+                  <Image className={s.controlIcon} src={icons.plus} alt="Add to playlist" width={34} height={34} />
+                </button>
             </div>
         </div>
     )

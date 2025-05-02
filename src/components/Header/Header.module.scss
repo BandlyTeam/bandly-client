@@ -15,6 +15,7 @@
     height: 45px;
     width: 100%;
     object-fit: cover;
+    cursor: pointer;
 
     &User {
       height: 50px;
@@ -30,6 +31,7 @@
 
 .icon {
   width: 30px;
+  cursor: pointer;
 
   &User {
     width: 45px;

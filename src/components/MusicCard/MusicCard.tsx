@@ -37,6 +37,13 @@ export default function MusicCard({ song }: MusicCardProps) {
                 </Link>
             </div>
 
+            {/* Song duration/progress bar */}
+            <div className={s.musicCardDurationLine}>
+                <div className={s.musicCardDurationProgress} style={{width: '40%'}} />
+                <span className={s.musicCardDurationTime}>1:24</span>
+                <span className={s.musicCardDurationTime} style={{justifySelf: 'end'}}>3:45</span>
+            </div>
+
             <div className={s.controlPanelWrapper}>
                 <ControlPanel theme={'light'} />
             </div>

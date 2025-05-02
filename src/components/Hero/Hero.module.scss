@@ -64,15 +64,16 @@
   filter: drop-shadow(10px 0px 4px rgba(90, 90, 90, 100));
 
   &Music {
+    filter: none;
     font-family: inherit;
     position: absolute;
-    top: 80%;
+    top: 60%;
     left: 50%;
     transform: translateX(-50%) scaleX(1.5) scaleY(0.7);
-    -webkit-text-stroke: 1px rgb(198, 198, 198);
+    -webkit-text-stroke: 3px rgb(198, 198, 198);
     letter-spacing: -5px;
     z-index: 5;
-    font-size: 300px;
+    font-size: 450px;
     font-weight: 600;
   }
 
