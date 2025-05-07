@@ -1,0 +1,93 @@
+.musicItem {
+  display: flex;
+  color: white;
+  height: 60px;
+  width: 100%;
+  // border: 1px solid white;
+  align-items: center;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+  position: relative;
+
+  &:hover {
+    background-color: rgba(145, 133, 133, 0.3);
+    cursor: pointer;
+  }
+
+  &Cover {
+    height: 100%;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    &Img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &Text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+    margin-left: 10px;
+    gap: 3px;
+  }
+
+  &Title {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+
+  &Artist {
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+
+  &Album {
+    // margin-left: 250px;
+    position: absolute;
+    left: 500px;
+    letter-spacing: 1.5px;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &Duration {
+    position: absolute;
+    right: 20px;
+    margin-left: 20px;
+  }
+}
+
+.like {
+  margin-top: 5px;
+  transition: 0.3s;
+  position: absolute;
+  right: 60px;
+
+  &:active {
+    transform: scale(0.8);
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:hover:active {
+    transform: scale(0.8);
+  }
+
+  &Button {
+
+  }
+
+  &Icon {
+
+  }
+}
+

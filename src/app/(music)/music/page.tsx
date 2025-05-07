@@ -11,6 +11,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SearchBar from '@/components/SearchBar/SearchBar';
 import FilterBox from '@/components/FilterBox/FilterBox';
+import MusicListItem from '@/components/MusicListItem/MusicListItem';
+import { testSongs } from '@/const/music';
 
 // Mock array of songs for the carousel
 type SongDataType = typeof pixiesSong;
@@ -85,6 +87,9 @@ export default function MusicPage() {
             </div>
 
             <div className={s.musicMainContentList}>
+              {testSongs.map(song => (
+                <MusicListItem key={song.id} songData={song} />
+              ))}
             </div>
           </div>
         </div>
@@ -95,4 +100,7 @@ export default function MusicPage() {
       </main>
     </div>
   );
+}
+() => {
+
 }
