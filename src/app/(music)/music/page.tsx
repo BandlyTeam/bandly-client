@@ -14,7 +14,6 @@ import FilterBox from '@/components/FilterBox/FilterBox';
 import MusicListItem from '@/components/MusicListItem/MusicListItem';
 import { testSongs } from '@/const/music';
 
-// Mock array of songs for the carousel
 type SongDataType = typeof pixiesSong;
 const songs: SongDataType[] = [
   pixiesSong,

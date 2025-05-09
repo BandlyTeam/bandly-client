@@ -94,3 +94,15 @@
   position: absolute;
   inset: 0;
 }
+
+.headerBlackOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; // height of the nav area
+  background: #181818;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+}

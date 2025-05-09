@@ -1,0 +1,157 @@
+@import '@/utils/mixins.scss';
+
+.hero {
+  background: #181818;
+  min-height: 100vh;
+  position: relative;
+}
+.title {
+
+  color: #fff;
+  opacity: 0.5;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: left;
+  margin: 0 0 32px 20px;
+  letter-spacing: 2px;
+  display: block;
+  will-change: transform;
+  position: relative;
+  z-index: 3;
+}
+.Grid {
+  display: flex;
+  gap: 32px;
+  justify-content: flex-start;
+  padding: 0 80px;
+  overflow-x: hidden; 
+  scrollbar-width: none;
+}
+
+@keyframes fadeInUp {}
+@keyframes fadeInDown {}
+
+.card {
+  background: #222;
+  color: #fff;
+  padding: 40px 36px;
+  border-radius: 8px;
+  min-width: 400px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  opacity: 1;
+  transform: none;
+  transition: none;
+  cursor: pointer;
+
+  &Date {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    animation: none;
+    transition: none;
+    cursor: pointer;
+  }
+
+  &City {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    animation: none;
+    transition: none;
+    cursor: pointer;
+  }
+
+  &Venue {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: #ccc;
+    animation: none;
+    transition: none;
+    cursor: pointer;
+  }
+
+  &Actions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &Action {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #fff;
+      cursor: pointer;
+      position: relative;
+      transition: none;
+      opacity: 0.1;
+      animation: none;
+    }
+  }
+
+  &List {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+    position: relative;
+  }
+}
+
+.Action span {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 2px;
+  transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.Action:hover span {
+  color: #b6b3ab;
+  border-bottom: 2px solid #3d3c39;
+}
+
+.EnhancedSoldOut {
+  text-decoration: line-through;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.listBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  width: 100%;
+  padding: 0 40px;
+
+  &Arrow {
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: background 0.5s, color 0.5s;
+    z-index: 2;
+  }
+  .arrow:hover {
+    background: #b9caec;
+    background: #adaaa4;
+    color: #181818;
+  }
+}

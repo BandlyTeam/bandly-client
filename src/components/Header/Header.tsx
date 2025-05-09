@@ -46,6 +46,9 @@ export default function Header({ hero, headerHeight = 700, white = false}: Heade
         }
       }
     >
+      {white && (
+        <div className={s.headerBlackOverlay} />
+      )}
       <nav className={s.nav}>
         <Link href="#" className={`${s.icon} ${s.iconBurger} ${s.left}`}>
           <Image src={handleIconsColor(Icons.Burger)} alt="Pause" width={30} height={30} />
@@ -57,7 +60,7 @@ export default function Header({ hero, headerHeight = 700, white = false}: Heade
           <Link href="/" className={s.navLinksLink}>
             <Image className={s.navLogo} src={handleIconsColor(Icons.BLogo)} alt="Logo" width={100} height={100} />
           </Link>
-          <Link href="#" style={{ color: white ? 'white' : 'black' }}>Events</Link>
+          <Link href="/events" style={{ color: white ? 'white' : 'black' }}>Events</Link>
           <Link href="#" style={{ color: white ? 'white' : 'black' }}>Media</Link>
         </div>
 
