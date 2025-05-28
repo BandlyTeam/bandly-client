@@ -3,6 +3,8 @@ import { Oswald } from "next/font/google";
 import { Luckiest_Guy } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer/Footer";
+import { MusicPlayerProvider } from "@/contexts/MusicPlayerContext";
+import FloatingMusicPlayer from "@/components/FloatingMusicPlayer/FloatingMusicPlayerSimple";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -35,10 +37,12 @@ export default function RootLayout({
         className={`${oswald.variable} ${luckiestGuy.variable}`}
         suppressHydrationWarning
       >
-        {children}
-        <Footer />
+        <MusicPlayerProvider>
+          {children}
+          <Footer />
+          <FloatingMusicPlayer />
+        </MusicPlayerProvider>
       </body>
     </html>
   );
 }
-
